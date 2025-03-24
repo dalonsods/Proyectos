@@ -7,5 +7,5 @@ Estructura de la carpeta Bot_IA_Tetris
 - main_IA_entrenada.py: IA ya entrenada a camara lenta
 - main_IA_entrenada_acelerado.py: IA ya entrenada, la velocidad va subiendo
 > [!NOTE]
-> Los ficheros relevantes a ejecutar son main_IA_entrenada.py y main_IA_entrenada_acelerado.py
+> Los ficheros relevantes a ejecutar son main_IA_entrenada.py y main_IA_entrenada_acelerado.py.
 > poblacion.py es para entrenar y tardará bastante en ejecutar.
