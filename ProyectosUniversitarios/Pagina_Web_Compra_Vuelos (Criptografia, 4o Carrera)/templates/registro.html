@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Criptografía">
+  <meta name="description" content="Ejercicio Criptografía">
+  <meta name="author" content="Daniel Alonso, Javier Herrero">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto</title>
+  <link rel="stylesheet" href="../static/style/registro.css">
+</head>
+
+<body>
+  <a id="home" href="/home">
+      <img src="../static/images/flecha.png">
+      <p>Home</p>
+  </a>
+  <form id="registrar" method="POST" action="/registrar" onsubmit="return checkPasswordMatch()">
+
+    <h2>Registro</h2>
+
+    <input type="text" class="campos" name="Usuario" placeholder="Usuario" pattern="^[A-Za-z0-9]+$" required
+    title="El nombre de usuario solo puede contener letras y números" autocomplete="off"><br>
+
+    <input type="email" class="campos" name="Email" placeholder="Email" required autocomplete="off"><br>
+
+    <input id="password" type="password" class="campos" name="Contraseña" placeholder="Contraseña"
+    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$" required
+    title="La contraseña debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y símbolos (@#$%^&+=!)."
+    oninvalid="this.setCustomValidity('La contraseña debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y símbolos (@#$%^&+=!).')"
+    oninput="this.setCustomValidity('')"><br>
+
+    <input id="confirmPassword" type="password" class="campos" name="Repite la contraseña"
+    placeholder="Repite la contraseña" required
+    oninput="checkPasswordMatch()"><br>
+
+    <p id="error"></p>
+
+    <p class="msg">¿Ya tienes cuenta? Inicia sesión <a href="/login">aquí</a></p>
+
+    <input type="submit" class="submitbutton" value="Registrarse">
+
+  </form>
+
+  <script>
+      var mensaje = "{{ mensaje }}";
+
+          // Muestra el aviso si hay un mensaje
+          if (mensaje) {
+              document.getElementById('error').textContent = mensaje;
+          }
+      function checkPasswordMatch() {
+          var password = document.getElementById("password").value;
+          var confirmPassword = document.getElementById("confirmPassword");
+
+          if (password !== confirmPassword.value) {
+              confirmPassword.classList.add("password-mismatch");
+              document.getElementById('error').textContent = "Las contraseñas no coinciden";
+              return false;
+          } else {
+              confirmPassword.classList.remove("password-mismatch");
+              document.getElementById('error').textContent = "";
+              return true;
+          }
+      }
+  </script>
+
+</body>
+</html>

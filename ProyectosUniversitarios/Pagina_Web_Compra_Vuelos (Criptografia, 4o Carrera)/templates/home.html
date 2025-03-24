@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Criptografía">
+  <meta name="description" content="Ejercicio Criptografía">
+  <meta name="author" content="Daniel Alonso, Javier Herrero">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crypto Airlines</title>
+  <link rel="stylesheet" href="../static/style/home.css">
+</head>
+
+<body>
+  <div id="cabecera">
+    <a id="home" href="/home">
+      <img id="logo" src="../static/images/logo.png">
+    </a>
+    <a id="login" href="{% if usuario %}/perfil{% else %}/login{% endif %}">
+      <img src="../static/images/login.png">
+      <p>{% if usuario %}{{ usuario }}{% else %}Inicia Sesión{% endif %}</p>
+    </a>
+  </div>
+
+  <div id="viajes">
+
+    <div class="viaje">
+      <div class="image">
+        <img src="../static/images/paris.png">
+      </div>
+      <div class="content">
+        <div class="precio">
+          <h3>París</h3>
+          <p>599€</p><br>
+        </div>
+        <ul>
+          <li><span>Duración</span>: 6 días y 5 noches.</li>
+          <li><span>Alojamiento</span>: Hotel en el centro de París.</li>
+          <li>Visita Torre Eiffel y crucero por el Sena.</li>
+          <li>Exploración los Museos del Louvre y d'Orsay.</li>
+          <li>Excursión opcional al Palacio de Versalles.</li>
+        </ul>
+      </div>
+      <a href="/reserva?destino=paris" class="reserva-button">Reservar</a>
+    </div>
+
+    <div class="viaje">
+      <div class="image">
+        <img src="../static/images/roma.png">
+      </div>
+      <div class="content">
+        <div class="precio">
+          <h3>Roma</h3>
+          <p>499€</p><br>
+        </div>
+        <ul>
+          <li><span>Duración</span>: 5 días y 4 noches.</li>
+          <li><span>Alojamiento</span>: Hotel de 4 estrellas en el centro de Roma.</li>
+          <li>Visita al Coliseo y el Foro Romano.</li>
+          <li>Exploración de la Ciudad del Vaticano.</li>
+          <li>Excursión a las ruinas de Pompeya.</li>
+        </ul>
+      </div>
+      <a href="/reserva?destino=roma" class="reserva-button">Reservar</a>
+    </div>
+
+    <div class="viaje">
+      <div class="image">
+        <img src="../static/images/madrid.png">
+      </div>
+      <div class="content">
+        <div class="precio">
+          <h3>Madrid</h3>
+          <p>399€</p><br>
+        </div>
+        <ul>
+          <li><span>Duración</span>: 5 días y 4 noches.</li>
+          <li><span>Alojamiento</span>: Hotel de 4 estrellas.</li>
+          <li>Visita Museo del Prado y Palacio Real.</li>
+          <li>Explora Parque del Retiro y Puerta del Sol.</li>
+          <li>Excursión opcional a Toledo.</li>
+        </ul>
+      </div>
+      <a href="/reserva?destino=madrid" class="reserva-button">Reservar</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

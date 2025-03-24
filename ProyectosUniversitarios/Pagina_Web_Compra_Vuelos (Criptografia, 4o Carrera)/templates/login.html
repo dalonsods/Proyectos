@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Criptografía">
+  <meta name="description" content="Ejercicio Criptografía">
+  <meta name="author" content="Daniel Alonso, Javier Herrero">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../static/style/login.css">
+</head>
+
+<body>
+  <a id="home" href="/home">
+      <img src="../static/images/flecha.png">
+      <p>Home</p>
+  </a>
+  <form id="entrar" method="POST" action="/entrar">
+
+    <h2>Iniciar Sesión</h2>
+
+    <input type="text" class="campos" name="Usuario" placeholder="Usuario" pattern="^[A-Za-z0-9]+$" required
+    title="El nombre de usuario solo puede contener letras y números" autocomplete="off"><br>
+
+    <input type="password" class="campos" name="Contraseña" placeholder="Contraseña"
+    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$" required
+    title="La contraseña debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y símbolos (@#$%^&+=!)."><br>
+
+    <p id="error"></p>
+
+    <p class="msg">¿Aún no tienes cuenta? Regístrate <a href="/registro">aquí</a></p>
+
+    <input type="submit" class="submitbutton" value="Log in">
+
+  </form>
+
+  <script>
+    var mensaje = "{{ mensaje }}";
+
+    // Muestra el aviso si hay un mensaje
+    if (mensaje) {
+        document.getElementById('error').textContent = mensaje;
+    }
+  </script>
+</body>
+</html>

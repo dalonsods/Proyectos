@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Criptografía">
+  <meta name="description" content="Ejercicio Criptografía">
+  <meta name="author" content="Daniel Alonso, Javier Herrero">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserva</title>
+  <link rel="stylesheet" href="../static/style/reserva.css">
+</head>
+
+<body>
+  <a id="home" href="/home">
+      <img src="../static/images/flecha.png">
+      <p>Home</p>
+  </a>
+  <form id="reservar" method="POST" action="/reservar?destino={{ destino }}">
+
+    <h2>Reserva</h2>
+
+    <input id="destino" class="campos" name="Destino" value="Destino: {% if destino == 'madrid' %}Madrid - España{% elif destino == 'roma' %}Roma - Italia{% else %}París - Francia{% endif %}" readonly>
+
+    <input type="date" id="fecha_ida" class="campos" name="Ida" required min="2023-10-28">
+
+    <input type="text" class="campos" name="Tarjeta" required
+    title="Introduzca exclusivamente números (16)"
+    placeholder="Número de tarjeta" pattern="^\d{16}$" autocomplete="off">
+
+    <input type="number" class="campos" name="Pasajeros" required
+    placeholder="Número de pasajeros">
+
+    <p id="error"></p>
+
+    <input type="submit" class="submitbutton" value="Reservar">
+
+  </form>
+
+  <style>
+
+    {% if destino in ['madrid', 'paris', 'roma'] %}
+      body {
+          background-image: url("../static/images/{{ destino }}.png");
+          background-color: rgba(0, 0, 0, 0.25); /* Valor alfa de 0.5 para un fondo oscuro */
+          background-blend-mode: multiply;
+      }
+    {% else %}
+      body {
+            background-image: url("static/images/img.jpg");
+      }
+    {% endif %}
+  </style>
+
+  <script>
+    var mensaje = "{{ mensaje }}";
+
+    // Muestra el aviso si hay un mensaje
+    if (mensaje) {
+        document.getElementById('error').textContent = mensaje;
+    }
+  </script>
+
+</body>
+</html>

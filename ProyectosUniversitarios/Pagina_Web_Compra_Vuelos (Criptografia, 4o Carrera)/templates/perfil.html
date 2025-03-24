@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Criptografía">
+  <meta name="description" content="Ejercicio Criptografía">
+  <meta name="author" content="Daniel Alonso, Javier Herrero">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil</title>
+  <link rel="stylesheet" href="../static/style/perfil.css">
+</head>
+
+<body>
+  <a id="home" href="/home">
+    <img src="../static/images/flecha.png">
+    <p>Home</p>
+  </a>
+  <div id="cabecera">
+    <a id="cerrar" href="/cerrar">
+      <p>Cerrar Sesión</p>
+    </a>
+    <a id="login" href="{% if usuario %}/perfil{% else %}/login{% endif %}">
+      <img src="../static/images/login.png">
+      <p>{% if usuario %}{{ usuario }}{% else %}Inicia Sesión{% endif %}</p>
+    </a>
+  </div>
+  <div id="reservas">
+
+    <h2>Reservas</h2>
+
+    {% if reservas %}
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th><th>Destino</th><th>Pasajeros</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reserva in reservas %}
+            <tr>
+              <td>{{ reserva[0] }}</td>
+              <td>{{ reserva[1] }}</td>
+              <td>{{ reserva[2] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p id="grande">Aún no hay reservas a tu nombre</p>
+      <p id="pequeño">Pulsa más abajo para reservar tu primer viaje</p>
+    {% endif %}
+
+    <a href="/home" class="reserva-button">Reservar</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+/*Estilo para html*/
+html{
+    /*con smooth permitimos que al pinchar en los enlaces los cambios sean suaves*/
+    scroll-behavior: smooth;
+}
+/*Estilo para el conjunto del body*/
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-image: url("../images/img.jpg");
+    /*Ponemos varias fuentes para garantizar que, si no hay soporte para la primera pruebe con las siguientes*/
+    font-family: Verdana, Tahoma, serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center; /* Centra horizontalmente en la página */
+    align-items: center;
+}
+/*Estilo del botón home*/
+#home{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    height: 7vh;
+    display: flex;
+    margin: 3vh 0 0 3vw;
+    text-decoration: none;
+}
+#home img{
+    margin: auto 0.5vw auto 0vw;
+    height: 35%;
+}
+#home p{
+    margin: auto 0vw auto 0vw;
+    color: white;
+}
+/*Estilo del formulario*/
+form{
+    width: 45vh;
+    background: rgb(30,30,30);
+    padding: 5vh 8vh 5vh 5vh;
+    margin: auto;
+    border-radius: 1.5vh;
+    box-shadow: 1vh 2vh 5.5vh #000;
+    text-align: center;
+}
+/*Estilo del titulo del formulario*/
+form h2{
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+    color: gold;
+    font-style: italic;
+    text-align: center;
+}
+/*Estilo del mensaje de registro*/
+.msg{
+    color: darkgrey;
+    font-style: italic;
+    font-size: 2vh;
+}
+/*Estilo del enlace a pagina de registro*/
+.msg a{
+    color: #0074D9;
+    font-style: italic;
+    font-size: 2vh;
+}
+/*Estilo de los inputs del formulario (No emplearemos labels)*/
+.campos{
+    font-size: 1.6vh;
+    width: 100%;
+    background: rgb(30,30,30);
+    color: darkgrey;
+    padding: 1.5vh;
+    border-radius: 1.5vh;
+    margin-bottom: 2vh;
+    font-family: Verdana, Tahoma, serif;
+}
+/*Estilo de los inputs del formulario cuando el puntero este sobre ellos*/
+.campos:hover{
+    font-size: 2vh;
+    color: #e0b13c;
+    z-index: 1;
+    box-shadow: 1px 1px 1px white;
+    transition: all 0.5s;
+}
+/*Estilo del mensaje de error*/
+#error {
+    margin-bottom: 4vh;
+    color: red;
+    text-align: center;
+    animation: wiggle 0.5s 1;
+}
+/*Estilo del boton de login*/
+.submitbutton{
+    width: 30%;
+    background: rgb(15,15,15);
+    border: none;
+    box-shadow: 3px 5px 7px #000;
+    padding: 1.5vh;
+    color: darkgrey;
+    border-radius: 1.5vh;
+    margin-top: 2vh;
+    align-self: center;
+}
+/*Estilo del boton de login cuando el puntero este sobre este*/
+.submitbutton:hover{
+    font-size: 2vh;
+    color: #e0b13c;
+    transition: all 0.5s;
+}
+/*Estilo animación temblor del mensaje de error*/
+@keyframes wiggle {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}

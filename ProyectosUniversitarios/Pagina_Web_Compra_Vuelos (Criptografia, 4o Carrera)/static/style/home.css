@@ -1,0 +1,113 @@
+html{
+    /*con smooth permitimos que al pinchar en los enlaces los cambios sean suaves*/
+    scroll-behavior: smooth;
+}
+/*Estilo para el conjunto del body*/
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-image: url("../images/img.jpg");
+    /*Ponemos varias fuentes para garantizar que, si no hay soporte para la primera pruebe con las siguientes*/
+    font-family: Verdana, Tahoma, serif;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+#cabecera{
+    margin: 3vh 0 0 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    height: 7vh;
+
+}
+#cabecera img{
+    height: 100%;
+    width: auto;
+    margin-right: 0.5vw;
+
+}
+#login{
+    display: flex;
+    margin: 0 3vw 0 auto;
+    text-decoration: none;
+}
+#login p{
+    color: white;
+}
+#viajes {
+    flex: 1;
+    padding: 0 2vw 5vh 2vw;
+    display: flex;
+    justify-content: center;
+}
+.viaje{
+    width: 23%;
+    height: 72%;
+    background: rgb(30,30,30);
+    padding: 7vh;
+    margin: auto;
+    border-radius: 2.5vh;
+    box-shadow: 1vh 2vh 5.5vh #000;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.image{
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    height: 40%;
+
+}
+.image img{
+    width: 100%;
+    border-radius: 1.5vh;
+    box-shadow: 1vh 2vh 5.5vh #000;
+}
+.content{
+    margin-top: 5vh;
+}
+.precio{
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+}
+.precio h3{
+    color: gold;
+    font-size: 2em;
+    margin: 0;
+
+}
+.precio p{
+    margin: 0 0 0 auto;
+    color: white;
+    font-size: 2em;
+}
+.content ul{
+    padding: 1em 0 0 1em;
+    text-align: left;
+    color: darkgrey;
+    font-size: 1vw;
+}
+.content ul li span{
+    color: gold;
+}
+.viaje a{
+    width: 30%;
+    background: rgb(15,15,15);
+    border: none;
+    box-shadow: 3px 5px 7px #000;
+    padding: 1.5vh;
+    color: darkgrey;
+    border-radius: 1.5vh;
+    margin-top: 2vh;
+    align-self: center;
+    text-decoration: none;
+}
+.viaje a:hover{
+    font-size: 2vh;
+    color: #e0b13c;
+    transition: all 0.5s;
+}
