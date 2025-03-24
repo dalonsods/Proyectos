@@ -10,5 +10,5 @@ Estructura de la carpeta ML_y_GestionBBDD
   - Sobre las nuevas tablas se realizaron consultas para extraer los datos relevantes.
   - Se añadieron estos datos a un nuevo csv
   - Con dicho CSV y el uso de python y la librería sklearn se creó un clasificador basado en Decision Tree
-  > [!NOTE]  
-  > Este proceso se realizó dos veces, para construir dos clasificadores distintos (TaskA y TaskB)
+> [!NOTE]  
+> Este proceso se realizó dos veces, para construir dos clasificadores distintos (TaskA y TaskB)
